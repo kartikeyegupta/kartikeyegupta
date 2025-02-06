@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
