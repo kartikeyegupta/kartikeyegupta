@@ -75,7 +75,7 @@ export default function Home() {
     }
   };
 
-  const syntax = getSyntax(language);
+  const syntax = getSyntax();
 
   return (
     <VSCodeWrapper>
