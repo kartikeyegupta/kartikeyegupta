@@ -7,18 +7,24 @@ export default function Home() {
   const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   
   // Smooth spring physics for rotation
-  const rotateX = useSpring(useTransform(mouseY, [0, window.innerHeight], [15, -15]), {
+  const rotateX = useSpring(useTransform(mouseY, [0, dimensions.height], [15, -15]), {
     stiffness: 100,
     damping: 30
   });
-  const rotateY = useSpring(useTransform(mouseX, [0, window.innerWidth], [-15, 15]), {
+  const rotateY = useSpring(useTransform(mouseX, [0, dimensions.width], [-15, 15]), {
     stiffness: 100,
     damping: 30
   });
 
   useEffect(() => {
+    setDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
+
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -55,8 +61,14 @@ export default function Home() {
             key={i}
             className="absolute w-2 h-2 bg-blue-500/20 rounded-full"
             animate={{
-              x: [Math.random() * window.innerWidth, Math.random() * window.innerWidth],
-              y: [Math.random() * window.innerHeight, Math.random() * window.innerHeight],
+              x: [
+                Math.random() * (dimensions.width || 0),
+                Math.random() * (dimensions.width || 0)
+              ],
+              y: [
+                Math.random() * (dimensions.height || 0),
+                Math.random() * (dimensions.height || 0)
+              ],
             }}
             transition={{
               duration: Math.random() * 10 + 10,
