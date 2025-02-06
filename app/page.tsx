@@ -69,8 +69,8 @@ export default function Home() {
             transition={{ duration: 1, delay: 2 }}
             className="space-y-1 mb-16"
           >
-            <p className="text-zinc-500">// computer science student</p>
-            <p className="text-zinc-500">// duke university</p>
+            <p className="text-zinc-500">{"// computer science student"}</p>
+            <p className="text-zinc-500">{"// duke university"}</p>
             <div className="flex gap-4 mt-4">
               <a href="https://github.com/kartikeyegupta" className="hover:text-white transition-colors">
                 → github
