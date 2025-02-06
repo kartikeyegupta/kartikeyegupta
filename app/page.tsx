@@ -49,7 +49,7 @@ export default function Home() {
     { id: "java", name: "Java" },
   ];
 
-  const getSyntax = (section: string) => {
+  const getSyntax = () => {
     switch (language) {
       case "python":
         return {
@@ -132,7 +132,7 @@ export default function Home() {
                   → contact
                 </a>
               </div>
-            </motion.div>
+      e      </motion.div>
           )}
 
           {/* Projects section */}
