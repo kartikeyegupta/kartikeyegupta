@@ -103,7 +103,7 @@ export default function Home() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Hello, I'm Tiki.
+            Hello, I&apos;m Tiki.
           </motion.h1>
           <p className="text-xl text-gray-600 dark:text-gray-300">
             Computer Science Student at Duke University
